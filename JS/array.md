@@ -1,16 +1,16 @@
 # Mảng
 
-## Định nghĩa
+## I.Định nghĩa
 Mảng là đơn vị có thể chứa nhiều giá trị khác bên trong nó. Những giá trị nằm bên trong mảng được gọi là phần tử.
 
-## Cách tạo
+## II.Cách tạo
 Có 2 cách khai báo mảng cơ bản:\
 `[value1, value2, value3,...]`\
 hoặc\
 `Array.of(value1, value2, value3,...)`\
 trong đó `value1, value2, value3...` là các phần tử của mảng
 
-## Kiểm tra dữ liệu
+## III.Kiểm tra dữ liệu
 Có 4 cách để kiểm tra 1 object có phải là một mảng không:
 ### Cách 1
 Sử dụng phương thức `isArray()` của object Array, kết quả trả về sẽ là **true** hoặc **false**.\
@@ -27,10 +27,10 @@ Sử dụng `constructor`. Phương thức này trả về chính hàm khởi t�
 hoặc\
 `arrayName.constructor.name === "Array"`
 
-## Truy xuất mảng
+## IV.Truy xuất mảng
 Sử dụng cấu trúc `arrayName[index]` trong đó `arrayName` là tên mảng, `index` là số danh mục của phần tử cần truy xuất.
 
-## Phương thức mảng
+## V.Phương thức mảng
 - **Concat:** Ghép 2 hoặc nhiều mảng lại với nhau bằng cách trả về mảng mới với các phần tử là các phần tử của mảng tham số, không làm thay đổi mảng ban đầu.\
 `array1.concat(array2, array3,…)`
 - **CopyWithin:** Sao chép một nhóm các phần tử vào vị trí mới mà không làm thay đổi độ dài mảng. Phương thức làm thay đổi mảng ban đầu.\
@@ -125,13 +125,13 @@ trong đó `index` là vị trí cần thay thế, `length` là độ dài mản
     }
 ```
 
-## So sánh các phương thức mảng
+## VI.So sánh các phương thức mảng
 - **Kiểm tra mảng:** `some()`, `find()`, `every()` sẽ tiết kiệm thời gian hơn `forEach()`, `map()`, `filter()` trong việc kiểm tra phần tử trong mảng có thỏa mãn yếu tố nào đó hay không do những hàm này sẽ dừng ngay khi tìm thấy phần tử không thỏa mãn.
 - **Tìm vị trí phần tử:** Trong trường hợp mảng đã được sắp xếp, `lastIndexOf()` sẽ có hiệu quả tìm kiếm cao hơn với những giá trị nằm ở nửa cuối mảng.
 - **Tính toán mảng:** `reduce()` sẽ dễ dàng hơn khi dùng để tính toán với các phần tử trong mảng so với `forEach()`, `every()`, `map()` vì có sẵn 1 biến truyền đi xuyên suốt quá trình duyệt mảng.
 - **In phần tử mảng:** `join()` đa dụng hơn `toString()` và `toLocaleString()` vì có thể tùy chỉnh kí tự phân cách.
 
-## Sao chép mảng
+## VII.Sao chép mảng
 ### Sao chép nông
 **1.Array.slice**\
 `copy = arrayName.slice()`\
@@ -170,12 +170,12 @@ trong đó `index` là vị trí cần thay thế, `length` là độ dài mản
 Nhược điểm: không sao chép được các mảng lồng nhau.\
 Ưu điểm: Sao chép được cả phương thức của object.
 
+**So sánh hiệu năng:** Spread Operator > `for` > `slice` > `concat` > `forEach` > `reduce` > `map`;
+
 ### Sao chép sâu
 **15.Stringify&Parse**\
 `copy = JSON.parse(JSON.stringify(arrayName))`
 
 Nhược điểm: Không sao chép được phương thức của object.\
 Ưu điểm: Sao chép được các mảng lồng nhau.
-
-**So sánh hiệu năng:** Spread Operator > `for` > `slice` > `concat` > `forEach` > `reduce` > `map`;
 
