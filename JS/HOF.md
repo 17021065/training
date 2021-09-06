@@ -28,8 +28,8 @@ Currying được sử dụng nhằm mục đích làm sạch code và thể hi�
 
 Ví dụ ta có một quy trình xuất hàng như sau:\
 Kiểm tra nếu còn hàng\
-    =>  Kiểm tra mã nhà kho\
-        => Xuất hàng
+&nbsp;&nbsp;=>  Kiểm tra mã nhà kho\
+&nbsp;&nbsp;&nbsp;&nbsp;=> Xuất hàng
 
 Currying code cho quy trình này sẽ có dạng:
 ```
