@@ -37,10 +37,12 @@ Sử dụng cấu trúc `arrayName[index]` trong đó `arrayName` là tên mản
 `arrayName.copyWithin(newIndex, fromIndex, toIndex)`\
 trong đó `fromIndex` là vị trí đầu, `toIndex` là vị trí cuối, `newIndex` là vị trí sẽ sao chép đến.
 - **Entries:** Cung cấp một bộ lặp duyệt mảng dưới dạng cặp **key**-**value**.\
+```    
     var iterator = arrayName.entries();
     for (let e of iterator) {
         console.log(e);
     }
+```
 - **Every:** Kiểm tra từng phần tử trong mảng với hàm thử được cung cấp. Trả lại giá trị **true** hoặc **false**.\
 `arrayName.every(callbackFunction)`
 - **Fill:** Thay thế một nhóm các phần tử bằng một giá trị tĩnh cụ thể. Phương thức làm thay đổi mảng ban đầu.
