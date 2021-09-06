@@ -31,7 +31,7 @@ hoặc
 Sử dụng cấu trúc `arrayName[index]` trong đó `arrayName` là tên mảng, `index` là số danh mục của phần tử cần truy xuất.
 
 ## Phương thức mảng
-- **Concat:** Ghép 2 hoặc nhiều mảng lại với nhau bằng cách trả về mảng mới với các phần tử là các phần tử của mảng tham số, không làm thay đổi mảng ban đầu.
+-**Concat:** Ghép 2 hoặc nhiều mảng lại với nhau bằng cách trả về mảng mới với các phần tử là các phần tử của mảng tham số, không làm thay đổi mảng ban đầu.
 `array1.concat(array2, array3,…)`
 -**CopyWithin:** Sao chép một nhóm các phần tử vào vị trí mới mà không làm thay đổi độ dài mảng. Phương thức làm thay đổi mảng ban đầu.
 `arrayName.copyWithin(newIndex, fromIndex, toIndex)`
