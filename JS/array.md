@@ -132,6 +132,7 @@ trong đó `index` là vị trí cần thay thế, `length` là độ dài mản
 - **In phần tử mảng:** `join()` đa dụng hơn `toString()` và `toLocaleString()` vì có thể tùy chỉnh kí tự phân cách.
 
 ## Sao chép mảng
+### Sao chép nông
 **1.Array.slice**\
 `copy = arrayName.slice()`\
 **2.Array.map**\
@@ -156,7 +157,7 @@ trong đó `index` là vị trí cần thay thế, `length` là độ dài mản
 `arrayName.forEach(value => copy.push(value))`\
 **12.For**\
 `for(let = 0; i<arrayName.length, i++) copy.push (arrayName[i])`\
-**13.Array.reduce**\
+**13.Array.reduce**
 ```
     copy = arrayName.reduce((result, current) =>{
         result.push(current); 
@@ -164,7 +165,17 @@ trong đó `index` là vị trí cần thay thế, `length` là độ dài mản
     }, [])
 ```
 **14.Apply**\
-`Array.prototype.push.apply(copy, arrayName)`\
+`Array.prototype.push.apply(copy, arrayName)`
+
+Nhược điểm: không sao chép được các mảng lồng nhau.\
+Ưu điểm: Sao chép được cả phương thức của object.
+
+### Sao chép sâu
+**15.Stringify&Parse**\
+`copy = JSON.parse(JSON.stringify(arrayName))`
+
+Nhược điểm: Không sao chép được phương thức của object.\
+Ưu điểm: Sao chép được các mảng lồng nhau.
 
 **So sánh hiệu năng:** Spread Operator > `for` > `slice` > `concat` > `forEach` > `reduce` > `map`;
 
