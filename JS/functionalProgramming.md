@@ -3,7 +3,7 @@
 ## I.Định nghĩa
 Lập trình hàm là một dạng mô hình lập trình mà chương trình sẽ được xây dựng dựa trên việc biên soạn và ứng dụng hàm.
 
-Lập trình hàm có 2 đặc điểm chính:\
+Lập trình hàm có 2 đặc điểm chính:
 - **Tính thuần túy:** Tất cả các hàm đều là hàm thuần túy, không tác động đến bất cứ thứ gì bên ngoài nó, từ đó giảm thiểu lỗi có thể xảy ra.
 - **Tính bất biến:** Tất cả các biến và hàm được khai báo đều là bất biến, không được thay đổi. Sự thay đổi của dữ liệu trở nên rõ ràng hơn, ta có thể truy cập giá trị trong quá khứ của chúng bất cứ lúc nào.
 
