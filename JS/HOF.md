@@ -68,7 +68,7 @@ const numFunc = () => {
 
 var increment = numFunc();
 ```
-Mục đích của Closure là để bảo vệ các biến và hàm nhạy cảm. Trong lập trình hướng chức năng, các biến trong hàm thường được giải phóng sau khi hàm được thực thi. Để cache lại những biến này buộc chúng chỉ được truy cập thông qua một hàm khác, từ đó tăng mức độ bảo mật của hệ thống. Như ví dụ trên, `increment()` tham chiếu đến hàm `plus()`, biến `num` của hàm `numFunc()` sẽ không bị giải phóng sau khi `increment()` được gọi. Ta có thể tiếp tục gọi hàm `increment()` để điều khiển biến `num`.
+Mục đích của Closure là để bảo vệ các biến và hàm nhạy cảm. Trong lập trình hàm, các biến trong hàm thường được giải phóng sau khi hàm được thực thi. Để cache lại những biến này buộc chúng chỉ được truy cập thông qua một hàm khác, từ đó tăng mức độ bảo mật của hệ thống. Như ví dụ trên, `increment()` tham chiếu đến hàm `plus()`, biến `num` của hàm `numFunc()` sẽ không bị giải phóng sau khi `increment()` được gọi. Ta có thể tiếp tục gọi hàm `increment()` để điều khiển biến `num`.
 
 Một ví dụ khác:
 ```
