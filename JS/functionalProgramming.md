@@ -5,7 +5,7 @@ Lập trình hàm là một dạng mô hình lập trình mà chương trình s�
 
 Lập trình hàm có 2 đặc điểm chính:
 - **Tính thuần túy:** Tất cả các hàm đều là hàm thuần túy, không tác động đến bất cứ thứ gì bên ngoài nó, từ đó giảm thiểu lỗi có thể xảy ra.
-- **Tính bất biến:** Tất cả các biến và hàm được khai báo đều là bất biến, không được thay đổi. Sự thay đổi của dữ liệu trở nên rõ ràng hơn, ta có thể truy cập giá trị trong quá khứ của chúng bất cứ lúc nào.
+- **Tính bất biến:** Tất cả các biến và hàm được khai báo đều là bất biến, không được thay đổi. Vì thế sự thay đổi của dữ liệu trở nên rõ ràng hơn, ta có thể truy cập giá trị trong quá khứ của chúng bất cứ lúc nào.
 
 ### Ưu điểm
 - **Tăng tính tái sử dụng:** Từ việc chia nhỏ luồng xử lí thành nhiều hàm với chức năng nhất định, ta có thể tái sử dụng nhưng hàm đó ở những luồng khác trong chương trình.
@@ -44,7 +44,7 @@ Kết hợp hàm là việc kết hợp 2 hoặc nhiều hàm thành một hàm 
 ## III.FP và OOP
 | Yếu tố               | Functional Programming                     | Object Oriented Programming              | 
 | :------------------- | :----------------------------------------- | :--------------------------------------- | 
-| Định nghĩa           | Nhấn mạnh việc ước lượng của hàm           | Dựa trên khái niệm về đối tượng          |
+| Định nghĩa           | Nhấn mạnh việc định lượng hàm              | Dựa trên khái niệm về đối tượng          |
 | Dữ liệu              | Bất biến                                   | Khả biến                                 |
 | Mô hình              | Lập trình khai báo(Declaretive)            | Lập trình mệnh lệnh(Imperative)          |
 | Lập trình song song  | Hỗ trợ                                     | Không hỗ trợ                             | 
@@ -113,7 +113,7 @@ const title = person.gender === 'female' ? (!person.gotMarried ? 'Ms.' : 'Mrs.')
 ```
 hoặc **Logical operators**
 ```
-const title = (person.gender === 'female' || 'Mr') && ((!person.gotMarried || 'Ms.') && 'Mrs.');
+const title = (person.gender === 'female' || 'Mr') && (!person.gotMarried || 'Ms.') && 'Mrs.';
 ```
 
 ### No new/this
