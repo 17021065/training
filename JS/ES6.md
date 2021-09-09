@@ -420,7 +420,7 @@ Ta có thẻ nhập module ở HTML bằng thể `<script>` với `type="module"
 <script type="module" src="main.js"></script>
 ```
 
-**Tránh trùng tên**
+**Tránh trùng tên**\
 Để tránh trùng lặp tên giữa các item từ các module khác nhau, sử dụng từ khóa `as` để đổi tên chúng.
 ```
 // inside module.js
@@ -450,7 +450,7 @@ Module.function2()
 etc.
 ```
 
-**Ghép module**
+**Ghép module**\
 Ta có thể ghép các module con thành một module lớn hơn để rút gọn câu lệnh import. Ở module lớn ta export tất cả item từ các module nhỏ, biến module lớn thành trạm trung chuyển item.
 ```
 export { Square } from './shapes/square.js';
@@ -462,7 +462,7 @@ sau đó import các item đó từ module lớn về nơi cần thiết
 import { Square, Circle, Triangle } from './modules/shapes.js';
 ```
 
-**Tải module động**
+**Tải module động**\
 Module còn có thể tải tại thời điểm nó cần dùng, thay vì từ đầu.
 ```
 import('./modules/myModule.js')
