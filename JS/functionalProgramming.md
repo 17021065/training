@@ -113,7 +113,7 @@ const title = person.gender === 'female' ? (!person.gotMarried ? 'Ms.' : 'Mrs.')
 ```
 hoặc **Logical operators**
 ```
-const title = (person.gender === 'female' || 'Mr') && (!person.gotMarried || 'Ms.') && 'Mrs.';
+const title = (person.gender === 'female' && ((!person.gotMarried && 'Ms.') || 'Mrs.')) || 'Mr';
 ```
 
 ### No new/this
