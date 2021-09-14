@@ -1,5 +1,5 @@
 # Components và Props
-Về mặt khái niệm, **Component** giống như hàm trong JavaScript, nó nhận vào input bất kỳ -**Props** và trả về một React element mô tả những thứ ta muốn đưa lên màn hình.\ 
+Về mặt khái niệm, **Component** giống như hàm trong JavaScript, nó nhận vào input bất kỳ -**Props** và trả về một React element mô tả những thứ ta muốn đưa lên màn hình.\
 Components cho phép ta chia UI thành nhiều mảnh độc lập, có khả năng tái sử dụng. Có 2 loại component là **Function Components** và **Class Components**.
 ```
 // Function Components
