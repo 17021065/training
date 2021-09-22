@@ -63,6 +63,16 @@ Tệp `webpack.config.js` chứa các cấu hình cho công tác dóng gói củ
 
 ## III.Cơ chế hoạt động
 Các tệp trong src sẽ được đưa vào hệ thống xử lí của webpack, chuyển hóa thành các asset và chunk trong dist. Quá trình này gồm:
+- **Biên dịch:** các tệp sẽ được truyền qua các loader - công cụ giúp biên dịch code thành dạng mọi browser đều hiểu. Các loader được cấu hình tại `module.rules` với 2 thuộc tính là `test`(tệp nào) và `use`(loader nào).
+```
+module.exports = {
+  // ...
+  module: {
+    rules: [{ test: /\.txt$/, use: 'raw-loader' }],
+  },
+  // ...
+};
+```
 
 - **Phát hiện lỗi:** các lỗi không phải lỗi trong thời gian chạy như sai đường dẫn, sử dụng biến chưa khai báo... sẽ được hệ thống phát hiện và cảnh bảo cho lập trình viên. Quá trình xử lí sẽ bị hủy nếu xảy ra lỗi.
 
@@ -109,16 +119,6 @@ module.exports = {
         },
       },
     },
-  },
-  // ...
-};
-```
-- **Biên dịch:** các tệp sẽ được truyền qua các loader - công cụ giúp biên dịch code thành dạng mọi browser đều hiểu. Các loader được cấu hình tại `module.rules` với 2 thuộc tính là `test`(tệp nào) và `use`(loader nào).
-```
-module.exports = {
-  // ...
-  module: {
-    rules: [{ test: /\.txt$/, use: 'raw-loader' }],
   },
   // ...
 };
