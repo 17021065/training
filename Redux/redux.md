@@ -108,3 +108,52 @@ Trigger event bằng hook `useDispatch`.
 const dispatch = useDispatch();
 dispatch(increment())
 ```
+
+## Bất đồng bộ
+Để thêm các logic bất đồng bộ cho store, chẳng hạn như call API để lấy payload cho action, ta sử dụng action creator `createAsyncThunk`.
+```javascript
+const resolveAfter2Seconds = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(100);
+    }, 2000);
+  });
+}
+
+export const plus100 = createAsyncThunk('counter/plus100', async () => {
+  const response = await resolveAfter2Seconds();
+  return response;
+})
+```
+Sau đó thêm reducer xử lý các trạng thái của promise
+```javascript
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0,
+    status: 'idle',
+    error: null
+  },
+  reducers: {
+    ...
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(plus100.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(plus100.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.value = state.value+=action.payload
+      })
+      .addCase(plus100.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
+  }
+})
+```
+Lúc này ta có thể dispatch như action bình thường
+```javascript
+dispatch(plus100())
+```
