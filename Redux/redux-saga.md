@@ -22,7 +22,29 @@ console.log(generatorObject.next().value); // Line 6
 // I will be printed after the pause
 // World!
 // undefined
+``` 
+Từ khóa `yield` có tác dụng trả về một giá trị nào đó giống `return`, tuy nhiên từ khóa `yield` có thể sử dụng nhiều lần trong generator, cho phép ta nhận nhiều kết quả trả về từ các giai đoạn của của hàm. Đồng thời generator sẽ tạm dừng tại câu lệnh sau `yield` cho đến khi ta muốn nó tiếp tục chạy.
+
+Tất cả hoạt động của redux saga được thực hiện bởi một middleware của thư viện `redux-saga`, để kết nối middleware vào store, ta sử dụng hàm `createSagaMiddleware` và đưa nó vào thuộc tính cấu hình `middleware` của store.
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from 'saga';
+
+const sagaMiddleware = createSagaMiddleware();
+const store = configureStore({
+  reducer: {},
+  middleware: [sagaMiddleware],
+});
+sagaMiddleware.run(rootSaga);
 ```
+Middleware cung cấp các phương thức để thực hiện các thao tác cơ bản với store thông qua nó như `put`(`dispatch`) và `select`(`getState`).
+```javascript
+put({type: 'SOME_ACTION'}) // dispatch
+
+const state = select() // get state 
+```
+Những phương thức này trong redux saga gọi là effect.
 
 ## I.Effect
 Effect là một bản chỉ dẫn cho middleware thực hiện một số thao tác nhất định gọi là **pattern**.
@@ -146,4 +168,9 @@ Tương tự như `Promise.race()`, `yield` kết quả của effect đầu tiê
 
 ### all(effects)
 Tương tự `Promise.all()`, `yield` danh sách kết quả trả về của tất cả effect.  
+
+## IV.Blocking Saga & Non-Blocking Saga
+**Blocking Saga** là saga có thể bị trì hoãn lại để chờ một kết quả trả về từ một effect nào đó, blocking saga thường chứa effect `call` và `take`. Hai effect này tạo ra các **watcher** theo dõi hoạt động của hệ thống và chờ đợi thời điểm để tiếp tục saga. 
+
+**Non-Blocking Saga** là saga không chờ đợi kết quả trả về từ effect mà tiếp tục chạy, non-blocking saga thường chứa effect `fork` và `spawn`. Hai effect tạo ra một saga tương tự root saga để thực hiện action. Saga này được gọi là **worker** làm việc phụ giúp cho saga chính.
 
